@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistem Pemesanan</title>
+</head>
+<body>
+    <h1>Selamat datang di Sistem Pemesanan kami!</h1>
+
+    <div id="login">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div id="menu" style="display: none;">
+        <h2>Menu</h2>
+        <div id="items"></div>
+    </div>
+
+    <div id="order" style="display: none;">
+        <h2>Pesanan Anda</h2>
+        <div id="orderItems"></div>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

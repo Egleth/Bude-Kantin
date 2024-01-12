@@ -1,0 +1,42 @@
+class User:
+    def _init_(self, username, password):
+        self.username = username
+        self.password = password
+        self.logged_in = False
+
+    def login(self, username, password):
+        if username == self.username and password == self.password:
+            self.logged_in = True
+            print(f"Selamat datang, {self.username}!")
+        else:
+            print("Username atau password salah.")
+
+    def logout(self):
+        self.logged_in = False
+        print("Anda telah berhasil logout.")
+
+class Menu:
+    def _init_(self):
+        self.items = {"Nasi Goreng": 20000, "Es Teh Manis": 5000}
+
+    def display(self):
+        for item, price in self.items.items():
+            print(f"{item}: Rp{price}")
+
+class Order:
+    def _init_(self, user, menu):
+        self.user = user
+        self.menu = menu
+        self.order = {}
+
+    def add_to_order(self, item):
+        if item in self.menu.items:
+            self.order[item] = self.menu.items[item]
+            print(f"{item} telah ditambahkan ke pesanan Anda.")
+        else:
+            print("Item tidak tersedia.")
+
+    def total(self):
+        return sum(self.order.values())
+
+    def checkout(self):
